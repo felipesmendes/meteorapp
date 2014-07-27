@@ -1,5 +1,5 @@
 Template.registrar.events({
-	"submit form": function(event,template) {
+	"submit #registrar": function(event,template) {
 		event.preventDefault();
 		var nome = template.find("input[name='nome']").value;
 		var usuario = template.find("input[name='user']").value;
@@ -10,11 +10,11 @@ Template.registrar.events({
 		var endereco = template.find("input[name='endereco']").value;
 		
 		options = {username:usuario,email:email,password:password,profile:{
-			"profile.name": nome,
-			"profile.telefone": telefone,
-			"profile.celular": celular,
-			"profile.address":endereco }};
-
+			"name": nome,
+			"telefone": telefone,
+			"celular": celular,
+			"address":endereco }};
+			console.log(options);
 			Accounts.createUser(options,function(err){
 				if(!err){
 					FlashMessages.sendSuccess("Usuário cadastrado com sucesso!");
@@ -24,7 +24,7 @@ Template.registrar.events({
 		}
 
 	});
-Template.editarPerfil.rendered = function () { 
+Template.registrar.rendered = function () { 
 	getLocation();
 }
 
