@@ -1,0 +1,13 @@
+{
+  "packages": {
+    "iron-router": {},
+    "bootstrap3-less": {},
+    "flash-messages": {},
+    "collection2": {},
+    "autoform": {},
+    "roles": {},
+    "collection-helpers": {},
+    "font-awesome-4-less": {},
+    "accounts-ui-bootstrap-3": {}
+  }
+}

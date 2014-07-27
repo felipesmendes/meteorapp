@@ -1,0 +1,31 @@
+
+<template name="editarPerfil">
+	<form name="editarPerfil" method="post">
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="form-group">
+					<label class="control-label" for="nome">Nome</label>
+					<input type="text" name="nome" value="{{user.profile.name}}" required="true" class="form-control">
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="nome">Telefone</label>
+					<input type="tel" name="telefone" value="{{user.profile.telefone}}" required="true" class="form-control">
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="nome">Celular</label>
+					<input type="tel" name="celular" value="{{user.profile.celular}}" required="true" class="form-control">
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="form-group">
+					<label class="control-label" for="endereco">Endereço</label>
+					<input type="text" name="endereco" value="{{user.profile.address}}" required="true" class="form-control">
+				</div>
+			</div>
+		</div>
+		<div class="text-center">
+			<button type="submit" class="btn btn-success">Atualizar</button>
+		</div>
+
+	</form>
+</template>

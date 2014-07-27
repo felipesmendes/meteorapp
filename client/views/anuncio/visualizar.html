@@ -1,0 +1,87 @@
+<template name="visualizarAnuncio">
+	{{#with anuncio}}
+	<div class="page-header">
+		<h3>{{marca}} {{modelo}}</h3>
+	</div>
+	<div class="row">
+		<div class="col-xs-6 col-md-4">
+			<dl class="dl-horizontal">
+				<dt>Preço</dt>
+				<dd>R${{valor}}</dd>
+				<dt>Ano Fabricaçao</dt>
+				<dd>{{anoFabricacao}}</dd>
+				<dt>Ano Modelo</dt>
+				<dd>{{anoModelo}}</dd>
+				<dt>Combustível</dt>
+				<dd>{{combustivel}}</dd>
+			</dl>
+		</div>
+		<div class="col-xs-6 col-md-4">
+			<dl class="dl-horizontal">
+				<dt>Quilometragem</dt>
+				<dd>{{quilometragem}}</dd>
+				<dt>Portas</dt>
+				<dd>{{portas}}</dd>
+				<dt>Versão</dt>
+				<dd>{{versao}}</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="page-header">
+		<h3>Observações</h3>
+	</div>
+	<div class="row">
+		{{observacoes}}
+	</div>
+	<div class="page-header">
+		<h3>Contato</h3>
+	</div>
+	<div class="row">
+		{{#with user}}
+		<div class="col-xs-6 col-md-4">
+			<dl class="dl-horizontal">
+				<dt>Nome</dt>
+				<dd>{{profile.name}}</dd>
+				<dt>Telfone</dt>
+				<dd>{{profile.telefone}}</dd>
+				<dt>Celular</dt>
+				<dd>{{profile.celular}}</dd>
+			</dl>
+		</div>
+		<div class="col-xs-6 col-md-4">
+			<dl class="dl-horizontal">
+				<dt>Endereço</dt>
+				<dd>
+					<address>
+						{{profile.address}}
+					</address>
+				</dd>
+			</dl>
+		</div>
+		{{/with}}
+	</div>
+	<div class="page-header">
+		<h3>Comentários</h3>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-md-8">
+		{{#each comentarios}}
+		<div class="media">
+			<div class="media-body">
+				<h4 class="media-heading">{{autor}}</h4>
+			</div>
+			{{conteudo}}
+		</div>	
+		{{/each}}
+		</div>
+		<div class="col-xs-6 col-md-4">	
+
+			{{#if currentUser}}
+		{{> comentario}}
+		{{else}}
+		<p>Para comentário o anuncio você precisa estar logado.</p>
+		{{/if}}
+	</div>
+	</div>
+	{{/with}}
+</template>

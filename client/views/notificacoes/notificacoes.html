@@ -1,0 +1,31 @@
+<template name="notificacoes">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    Notificações
+    {{#if notificacoesCount}}
+    <span class="badge badge-inverse">{{notificacoesCount}}</span>
+    {{/if}}
+    <b class="caret"></b>
+  </a>
+  <ul class="notification dropdown-menu">
+    {{#if notificacoesCount}}
+    {{#each notificacoes}}
+    {{> notificacao}}
+    {{/each}}
+    {{else}}
+    <li><span>Sem Notificações</span></li>
+    {{/if}}
+  </ul>
+</template>
+
+<template name="notificacao">
+  <li>
+    <a href="{{notificationAuncioPath}}">
+      <strong>
+        {{#if autor}}
+        {{autor}}
+        {{else}}
+        Alguem
+        {{/if}}</strong> comentou no seu anúncio
+      </a>
+    </li>
+  </template>
